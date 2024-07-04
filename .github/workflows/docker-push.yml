@@ -44,5 +44,5 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/${{ github.event.repository.name }}:${{ github.run_number }}
+          tags: ${{ secrets.DOCKER_USERNAME }}/docker-pipeline:${{ github.run_number }}
             
