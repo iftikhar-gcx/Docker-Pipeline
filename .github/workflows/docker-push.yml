@@ -20,10 +20,10 @@ jobs:
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Building the Docker Image:latest
-        run: docker build -t iftikharmhd/docker-pipeline:latest .
+        run: docker build -t iftikharmhd/docker-pipeline:v2 .
 
       - name: Push to docker hub :latest
         uses: actions-hub/docker@master
         with:
-          args: push iftikharmhd/docker-pipeline:latest
+          args: push iftikharmhd/docker-pipeline:v2
             
