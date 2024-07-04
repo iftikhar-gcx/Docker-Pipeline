@@ -12,6 +12,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      
+      - name: Set up Docker BuildX
+        uses: docker/setup-buildx-action@v3
 
       - name: Login to docker hub
         uses: actions-hub/docker/login@master
@@ -20,10 +23,10 @@ jobs:
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Building the Docker Image:latest
-        run: docker build -t iftikharmhd/docker-pipeline:v2 .
+        run: docker build -t iftikharmhd/docker-pipeline:latest .
 
       - name: Push to docker hub :latest
         uses: actions-hub/docker@master
         with:
-          args: push iftikharmhd/docker-pipeline:v2
+          args: push iftikharmhd/docker-pipeline:latest
             
