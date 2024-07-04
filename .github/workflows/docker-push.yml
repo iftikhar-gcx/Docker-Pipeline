@@ -13,9 +13,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Installing Docker CLI
-        uses: actions-hub/docker@v1.0.3
-
       - name: Login to docker hub
         uses: actions-hub/docker/login@master
         env:
